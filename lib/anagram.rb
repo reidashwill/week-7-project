@@ -12,5 +12,9 @@ class Anagram
     elsif @word1.scan(/[aeoui]/).length >= 1
       true
     end  
-  end  
+  end
+
+  def case_insensitive
+    @word1.downcase!
+  end
 end    

@@ -19,6 +19,7 @@ end
 describe("case_insientitive") do
   it("will determine if the case_insenitive method will treat all words the same regardless of case") do
     set3 = Anagram.new("Test")
+    set3.case_insensitive
     expect(set3.word1).to(eq("test"))
   end
 end    
