@@ -1,17 +1,29 @@
 class Anagram
-  attr_accessor(:word1, :word2)
+  attr_accessor(:word1, :word2, :sentence1_array, :sentence2_array, :scan_holder)
   
   def initialize
     @word1 = word1
     @word2 = word2
+    @sentence1_array = []
+    @sentence2_array = []
+    @scan_holder
   end
 
   def word_validator
-    if @word1.scan(/[aeoui]/).length <= 0 || @word2.scan(/[aeoui]/).length <= 0
+    if @word1.scan(/[aeoui]/).length == 0 || @word2.scan(/[aeoui]/).length == 0
       false
     elsif @word1.scan(/[aeoui]/).length >= 1 || @word2.scan(/[aeoui]/).length >= 1
       true
     end  
+  end
+
+  def sentence_validator
+    @sentence1_array.each do |i|
+      @scan_holder = i.scan(/[aeoui]/)
+      break if i.scan(/[aeoui]/).length == 1
+      @scan_holder
+    end
+
   end
 
   def case_insensitive
@@ -21,10 +33,8 @@ class Anagram
   
   def anagram?
     if @word1.split('').sort.join == @word2.split('').sort.join
-      puts "these are anagrams!"
       true
     else
-      puts "these are not anagrams!  Lets check to see if they are antigrams!"
       false
     end
   end 
@@ -53,13 +63,27 @@ class Anagram
   end
 
   def full_check
-    if self.word_validator == true
-      puts "its starting to work"
-      self.case_insensitive
-      self.anagram?
-    elsif self.word_validator == false
-      puts "getting somewhere"  
-    end
+    if @word1.split(" ").length ==1
+      if self.word_validator == true
+        self.case_insensitive
+        if self.anagram? == true
+          puts "these are anagrams!"
+        elsif self.anagram? == false
+          puts "these are not anagrams!  Lets check to see if they are Antigrams!"
+          if self.antigram? == true
+            puts "they are indeed Antigrams!"
+          elsif self.antigram? == false
+            puts "these are neither anagrams, nor antigrams!"  
+          end
+        end    
+      elsif self.word_validator == false
+      puts "One of your inputs contained a fake word!  Please only use real words from now on."  
+      end
+    elsif @word1.split(" ").length >=2 || @word2.split(" ").length >=2
+      @sentence1_array = @word1.split(" ")
+      @sentence2_array = @word2.split(" ")
+      
+    end 
   end
 
 
