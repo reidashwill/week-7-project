@@ -77,3 +77,12 @@ describe("Anagram #sentence_check") do
     expect(set8.sentence_check).to(eq(true))
   end
 end
+
+describe("Anagram #full_check") do
+  it("will return true if full check is able to call on word_validator") do
+    set9 = Anagram.new
+    set9.word1 = "yes"
+    set9.word2 = "yes"
+    expect(set9.full_check).to(eq(true))
+  end
+end    

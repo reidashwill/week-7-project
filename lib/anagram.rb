@@ -1,7 +1,7 @@
 class Anagram
   attr_accessor(:word1, :word2)
   
-  def initialize()
+  def initialize
     @word1 = word1
     @word2 = word2
   end
@@ -21,8 +21,10 @@ class Anagram
   
   def anagram?
     if @word1.split('').sort.join == @word2.split('').sort.join
+      puts "these are anagrams!"
       true
     else
+      puts "these are not anagrams!  Lets check to see if they are antigrams!"
       false
     end
   end 
@@ -52,16 +54,13 @@ class Anagram
 
   def full_check
     if self.word_validator == true
+      puts "its starting to work"
       self.case_insensitive
-      if self.anagram? == true
-        puts "these are anagrams!"
-      elsif self.antigram? == true
-        puts "these are antigrams!"
-      else
-        puts "these are not anagrams or antigrams!"
-      end
+      self.anagram?
     elsif self.word_validator == false
-      puts "One of your inputs is not a valid word!  Please only use real words"
+      puts "getting somewhere"  
     end
   end
+
+
 end 
