@@ -18,7 +18,9 @@ class Anagram
   end
 
   def sentence_validator
-    @sentence1_array.all? {|word| word.scan(/[aeouiy]/).length >=1}
+    if @sentence1_array.all? {|word| word.scan(/[aeouiy]/).length >=1} == true || @sentence2_array.all? {|word| word.scan(/[aeouiy]/).length >=1} == true
+      true
+    end  
   end
 
   def case_insensitive
