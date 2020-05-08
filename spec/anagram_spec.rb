@@ -72,8 +72,8 @@ end
 describe("Anagram #sentence_check") do
   it("will return true if the given input contains multiple words or not") do
     set8 = Anagram.new
-    set8.word1 = "hill"
-    set8.word2 = "billy"
+    set8.word1 = "this is a string"
+    set8.word2 = "this is also a string"
     expect(set8.sentence_check).to(eq(true))
   end
 end
