@@ -7,18 +7,20 @@ class Anagram
   end
 
   def word_validator
-    if @word1.scan(/[aeoui]/).length <= 0
+    if @word1.scan(/[aeoui]/).length <= 0 || @word2.scan(/[aeoui]/).length <= 0
       false
-    elsif @word1.scan(/[aeoui]/).length >= 1
+    elsif @word1.scan(/[aeoui]/).length >= 1 || @word2.scan(/[aeoui]/).length >= 1
       true
     end  
   end
 
   def case_insensitive
     @word1.downcase!
+    @word2.downcase!
   end
   
-  def anagram
+  def anagram?
+    self.case_insensitive
     if @word1.split('').sort.join == @word2.split('').sort.join
       true
     else
@@ -26,7 +28,7 @@ class Anagram
     end
   end 
 
-  def antigram
+  def antigram?
     if
       @word1.scan(/[#{word2}]/).length <= 0
       true
@@ -34,5 +36,10 @@ class Anagram
       @word1.scan(/[#{word2}]/).length >= 0
       false
     end
-  end  
-end    
+  end
+
+  def space_remover
+    @word1.delete!(' ')
+    @word2.delete!(' ')
+  end
+end
