@@ -20,7 +20,6 @@ class Anagram
   end
   
   def anagram?
-    self.case_insensitive
     if @word1.split('').sort.join == @word2.split('').sort.join
       true
     else
@@ -50,4 +49,19 @@ class Anagram
       false
     end
   end
-end
+
+  def full_check
+    if self.word_validator == true
+      self.case_insensitive
+      if self.anagram? == true
+        puts "these are anagrams!"
+      elsif self.antigram? == true
+        puts "these are antigrams!"
+      else
+        puts "these are not anagrams or antigrams!"
+      end
+    elsif self.word_validator == false
+      puts "One of your inputs is not a valid word!  Please only use real words"
+    end
+  end
+end 
