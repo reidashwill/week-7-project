@@ -25,4 +25,14 @@ class Anagram
       false
     end
   end 
+
+  def antigram
+    if
+      @word1.scan(/[#{word2}]/).length <= 0
+      true
+    elsif
+      @word1.scan(/[#{word2}]/).length >= 0
+      false
+    end
+  end  
 end    

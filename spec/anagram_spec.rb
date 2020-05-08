@@ -34,4 +34,13 @@ describe("anagram") do
     set4.word2 = "silent"
     expect(set4.anagram).to(eq(true))
   end
+end
+
+describe("antigram") do
+  it("will determine if the .antigram method will compare two user inputs and return true if they are antigrams") do
+    set5 = Anagram.new
+    set5.word1 = "yeppers"
+    set5.word2 = "tip"
+    expect(set5.antigram).to(eq(true))
+  end
 end    
