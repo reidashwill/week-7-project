@@ -31,7 +31,7 @@ describe("anagram") do
   it("will determine if the .anagram method will compare two user inputs and return true if they are anagrams") do
     set4 = Anagram.new
     set4.word1 = "listen"
-    set4.word2 = "hey"
+    set4.word2 = "silent"
     expect(set4.anagram).to(eq(true))
   end
 end    
