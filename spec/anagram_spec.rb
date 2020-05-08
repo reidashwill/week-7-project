@@ -11,7 +11,7 @@ end
 
 describe("word_validator") do
   it("will determine if the user inputted string is a valid word by checking for the presence of vowels") do
-    set2 = Anagram.new("tsst")
+    set2 = Anagram.new("test")
     expect(set2.word_validator).to(eq(true))
   end
 end
