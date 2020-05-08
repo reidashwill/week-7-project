@@ -1,4 +1,4 @@
-# _{Anagram Checker}_
+# Anagram Checker_
 
 #### _This project allows the user to input words or phrases, and COMPUTRON the mighty will inform them if their input is an anagram, an antigram, or niether_
 
