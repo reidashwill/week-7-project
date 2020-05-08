@@ -69,14 +69,7 @@ describe("Anagram #space_remover # anagram") do
   end
 end
 
-describe("Anagram #sentence_check") do
-  it("will return true if the given input contains multiple words or not") do
-    set8 = Anagram.new
-    set8.word1 = "this is a string"
-    set8.word2 = "this is also a string"
-    expect(set8.sentence_check).to(eq(true))
-  end
-end
+
 
 describe("Anagram #full_check") do
   it("will return true if full check is able to call on word_validator") do
@@ -85,4 +78,12 @@ describe("Anagram #full_check") do
     set9.word2 = "yes"
     expect(set9.full_check).to(eq(true))
   end
-end    
+end
+
+describe("Anagram #sentence_validator") do
+  it("will return true if all words in sencence are valid words") do
+    set10 = Anagram.new
+    set10.sentence1_array = ["this", "is", "n", "test"]
+    expect(set10.sentence_validator).to(eq(true)) 
+  end
+end

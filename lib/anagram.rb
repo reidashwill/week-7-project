@@ -10,20 +10,15 @@ class Anagram
   end
 
   def word_validator
-    if @word1.scan(/[aeoui]/).length == 0 || @word2.scan(/[aeoui]/).length == 0
+    if @word1.scan(/[aeouiy]/).length == 0 || @word2.scan(/[aeouiy]/).length == 0
       false
-    elsif @word1.scan(/[aeoui]/).length >= 1 || @word2.scan(/[aeoui]/).length >= 1
+    elsif @word1.scan(/[aeouiy]/).length >= 1 || @word2.scan(/[aeouiy]/).length >= 1
       true
     end  
   end
 
   def sentence_validator
-    @sentence1_array.each do |i|
-      @scan_holder = i.scan(/[aeoui]/)
-      break if i.scan(/[aeoui]/).length == 1
-      @scan_holder
-    end
-
+    @sentence1_array.all? {|word| word.scan(/[aeouiy]/).length >=1}
   end
 
   def case_insensitive
@@ -54,13 +49,7 @@ class Anagram
     @word2.delete!(' ')
   end
 
-  def sentence_check
-    if @word1.split(" ").length >=2 || @word2.split(" ").length >=2
-      true
-    elsif @word1.split(" ").length == 1 || @word2.split(" ").length == 1
-      false
-    end
-  end
+
 
   def full_check
     if @word1.split(" ").length ==1
@@ -68,6 +57,7 @@ class Anagram
         self.case_insensitive
         if self.anagram? == true
           puts "these are anagrams!"
+          true
         elsif self.anagram? == false
           puts "these are not anagrams!  Lets check to see if they are Antigrams!"
           if self.antigram? == true
