@@ -1,7 +1,16 @@
 class Anagram
-  attr_accessor(:user_input)
+  attr_accessor(:word1, :word2)
   
-  def initialize(user_input)
-    @user_input = user_input
+  def initialize(word1)
+    @word1 = word1
+    @word2 = word2
   end
+
+  def word_validator
+    if @word1.scan(/[aeoui]/).length <= 0
+      false
+    elsif @word1.scan(/[aeoui]/).length >= 1
+      true
+    end  
+  end  
 end    

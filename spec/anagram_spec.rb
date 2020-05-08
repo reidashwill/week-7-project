@@ -2,9 +2,16 @@ require('rspec')
 require('pry')
 require('anagram')
 
-describe("string_check") do
-  it("will return true if the user input is a string") do
+describe("initialize") do
+  it("will determine if the user input is a string") do
     set1 = Anagram.new("test")
-    expect(set1.user_input).to be_instance_of(String)
+    expect(set1.word1).to be_instance_of(String)
+  end
+end
+
+describe("word_validator") do
+  it("will determine if the user inputted string is a valid word by checking for the presence of vowels") do
+    set2 = Anagram.new("tsst")
+    expect(set2.word_validator).to(eq(true))
   end
 end
