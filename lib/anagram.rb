@@ -10,7 +10,7 @@ class Anagram
   end
 
   def word_validator
-    if @word1.scan(/[aeouiy]/).length == 0 || @word2.scan(/[aeouiy]/).length == 0
+    if @word1.scan(/[aeiouy]/).length == 0 || @word2.scan(/[aeouiy1234567890]/).length == 0
       false
     elsif @word1.scan(/[aeouiy]/).length >= 1 || @word2.scan(/[aeouiy]/).length >= 1
       true
@@ -51,21 +51,19 @@ class Anagram
     @word2.delete!(' ')
   end
 
-
-
   def full_check
     if @word1.split(" ").length ==1
       if self.word_validator == true
         self.case_insensitive
         if self.anagram? == true
-          puts "these are anagrams!"
+          puts "These are anagrams!"
           true
         elsif self.anagram? == false
-          puts "these are not anagrams!  Lets check to see if they are Antigrams!"
+          puts "These are not anagrams!  Lets check to see if they are Antigrams!"
           if self.antigram? == true
-            puts "they are indeed Antigrams!"
+            puts "They are indeed Antigrams!"
           elsif self.antigram? == false
-            puts "these are neither anagrams, nor antigrams!"  
+            puts "These are neither anagrams, nor antigrams!"  
           end
         end    
       elsif self.word_validator == false
@@ -74,9 +72,23 @@ class Anagram
     elsif @word1.split(" ").length >=2 || @word2.split(" ").length >=2
       @sentence1_array = @word1.split(" ")
       @sentence2_array = @word2.split(" ")
-      
+      if self.sentence_validator == true
+        self.space_remover
+        self.case_insensitive
+        if self.anagram? == true
+          puts "These are anagrams!"
+          true
+        elsif self.anagram? == false
+          puts "These are not anagrams!  Lets check to see if they are Antigrams!"
+          if self.antigram? == true
+            puts "They are indeed Antigrams!"
+          elsif self.antigram? == false
+            puts "These are neither anagrams, nor antigrams!"  
+          end
+        end 
+      elsif self.sentence_validator == false
+        puts "One of your inputs contained a fake word!  Please only use real words from now on."
+      end  
     end 
   end
-
-
 end 

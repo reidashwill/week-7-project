@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _{Anagram Checker}_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _This project allows the user to input words or phrases, and COMPUTRON the mighty will inform them if their input is an anagram, an antigram, or niether_
 
-#### By _**{List of contributors}**_
+#### By _**Reid Ashwill**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This a ruby app that runs in the terminal.  It allows the user to input two words, or phrases.  Those inputs are then ran through an algorithm which first checks if they are valid inputs (only words that contain a vowel, and are then ordered and compared against each other to determine if they are anagrams, antigrams, or niether._
 ## Specs
 | Specs                                                                          | Input         | Output |
 |--------------------------------------------------------------------------------|---------------|--------|
@@ -18,28 +18,28 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Navigate to https://github.com/reidashwill/week-7-project_
+* _clone the respository to your local machine_
+* _navigate to the cloned directory and open in your text editor of choice to view code_
+* _run the command 'rspec' to run the suite of tests included_
+* _run the command 'ruby anagram_script.rb' to launch in the terminal and meet COMPUTRON_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs at this time._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Please reach out with any issues through https://github.com/reidashwill/week-7-project/issues_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Ruby_
+_Rspec_
 
 ### License
 
 *Licensed under the MIT license*
 
-Copyright (c) 2020 **_{List of contributors or company name}_**
+Copyright (c) 2020 **_Reid Ashwill_**
