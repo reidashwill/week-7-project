@@ -7,6 +7,14 @@
 ## Description
 
 _{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+## Specs
+| Specs                                                                          | Input         | Output |
+|--------------------------------------------------------------------------------|---------------|--------|
+| 1. Make sure user input is a string                                            | Word          | string |
+| 2. Make sure string contains only letters                                      | word          | true   |
+| 3. Make sure string is an "actual word" by checking for the presence of vowels | word          | true   |
+| 4. Accept 2 user inputs and determine if they are anagrams                     | "word" "drow" | true   |
+| 5. If they are not anagrams, determine if they are in fact antigrams           | "word" "hi"   | true   |
 
 ## Setup/Installation Requirements
 
