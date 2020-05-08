@@ -84,7 +84,7 @@ describe("Anagram #sentence_validator") do
   it("will return true if all words in sencence are valid words") do
     set10 = Anagram.new
     set10.sentence1_array = ["this", "is", "a", "test"]
-    set10.sentence2_array = ["this", "is", "n", "test"]
+    set10.sentence2_array = ["this", "is", "a", "test"]
     expect(set10.sentence_validator).to(eq(true))
   end
 end

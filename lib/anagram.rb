@@ -18,8 +18,8 @@ class Anagram
   end
 
   def sentence_validator
-    if @sentence1_array.all? {|word| word.scan(/[aeouiy]/).length >=1} == true || @sentence2_array.all? {|word| word.scan(/[aeouiy]/).length >=1} == true
-      true
+    if @sentence1_array.all? {|word| word.scan(/[aeouiy]/).length >=1} == true
+      @sentence2_array.all? {|word| word.scan(/[aeouiy]/).length >=1}
     end  
   end
 
