@@ -67,5 +67,13 @@ describe("Anagram #space_remover # anagram") do
     set7.space_remover
     expect(set7.anagram?).to(eq(true))
   end
-end  
-    
+end
+
+describe("Anagram #sentence_check") do
+  it("will return true if the given input contains multiple words or not") do
+    set8 = Anagram.new
+    set8.word1 = "hill"
+    set8.word2 = "billy"
+    expect(set8.sentence_check).to(eq(true))
+  end
+end

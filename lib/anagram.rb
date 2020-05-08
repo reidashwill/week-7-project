@@ -42,4 +42,12 @@ class Anagram
     @word1.delete!(' ')
     @word2.delete!(' ')
   end
+
+  def sentence_check
+    if @word1.split(" ").length >=2 || @word2.split(" ").length >=2
+      true
+    elsif @word1.split(" ").length == 1 || @word2.split(" ").length == 1
+      false
+    end
+  end
 end
