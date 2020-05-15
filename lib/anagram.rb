@@ -10,7 +10,7 @@ class Anagram
   end
 
   def word_validator
-    if @word1.scan(/[aeiouy]/).length == 0 || @word2.scan(/[aeouiy1234567890]/).length == 0
+    if @word1.scan(/[aeiouy]/).length == 0 || @word2.scan(/[aeouiy]/).length == 0
       false
     elsif @word1.scan(/[aeouiy]/).length >= 1 || @word2.scan(/[aeouiy]/).length >= 1
       true
@@ -38,7 +38,7 @@ class Anagram
 
   def antigram?
     if
-      @word1.scan(/[#{word2}]/).length <= 0
+      @word1.scan(/[#{word2}]/).length == 0
       true
     elsif
       @word1.scan(/[#{word2}]/).length >= 0

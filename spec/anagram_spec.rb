@@ -63,7 +63,7 @@ describe("Anagram #space_remover # anagram") do
   it("will combine space_remover and anagram methods to comapare two multiple word strings and determine if they are anagrams") do
     set7 = Anagram.new
     set7.word1 = "the eyes"
-    set7.word2 = "they se"
+    set7.word2 = "they see"
     set7.space_remover
     expect(set7.anagram?).to(eq(true))
   end
